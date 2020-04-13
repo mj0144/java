@@ -1,30 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!/*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -68,7 +42,7 @@ public class Ex1_Chat extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {	//ì‘ UIê°’ë“¤ ì´ˆê¸°í™”í•˜ë„¤. ëª¨ë“ˆë“¤ ë°°ì¹˜í•˜ê³ ,
+    private void initComponents() {	//ÀÀ UI°ªµé ÃÊ±âÈ­ÇÏ³×. ¸ğµâµé ¹èÄ¡ÇÏ°í,
 
         pp = new javax.swing.JPanel();
         p1 = new javax.swing.JPanel();
@@ -104,7 +78,7 @@ public class Ex1_Chat extends javax.swing.JFrame {
 
         pp.setLayout(new java.awt.CardLayout());
 
-        p1.setBackground(new java.awt.Color(255, 204, 204));
+        p1.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setText("IP:");
 
@@ -116,17 +90,17 @@ public class Ex1_Chat extends javax.swing.JFrame {
 
         jLabel3.setText("nickName:");
 
-        jButton1.setText("ì ‘ì†");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {	//ì ‘ì†ë²„íŠ¼ ì´ë²¤íŠ¸ ë°œìƒ!!!!!!!!!!
+        jButton1.setText("Á¢¼Ó");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {	//Á¢¼Ó¹öÆ° ÀÌº¥Æ® ¹ß»ı!!!!!!!!!!
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        nickName.setText("ê¹€ê¸¸ë™");	//nickName ê°’. í´ë¼ì´ì–¸íŠ¸ ì´ë¦„ì´ ë  ê°’.ì´ˆê¸°ê°’ ê¹€ê¸¸ë™.
+        nickName.setText("");	//nickName °ª. Å¬¶óÀÌ¾ğÆ® ÀÌ¸§ÀÌ µÉ °ª.ÃÊ±â°ª ±è±æµ¿.
 
         
-////////////////////ë ˆì´ì•„ì›ƒ ê´€ë ¨.//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////·¹ÀÌ¾Æ¿ô °ü·Ã.//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         javax.swing.GroupLayout p1Layout = new javax.swing.GroupLayout(p1);
         p1.setLayout(p1Layout);
         p1Layout.setHorizontalGroup(
@@ -170,31 +144,25 @@ public class Ex1_Chat extends javax.swing.JFrame {
         );
         pp.add(p1, "c1");
 
-        p2.setBackground(new java.awt.Color(204, 255, 204));
+        p2.setBackground(new java.awt.Color(204,204,0));
 
         msgView.setColumns(20);
         msgView.setRows(5);
         jScrollPane1.setViewportView(msgView);
 
         
-        //message ì…ë ¥ ì°½ ì´ë²¤íŠ¸ë°œìƒ!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //message ÀÔ·Â Ã¢ ÀÌº¥Æ®¹ß»ı!!!!!!!!!!!!!!!!!!!!!!!!!!!
         message.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messageActionPerformed(evt);
             }
         });
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-     
-        
-        
-        nkname.setText(nickName.getText());	//ì—¬ê¸°ë¥¼  ë‚´ê°€ ì„¤ì •í•œ nickNameìœ¼ë¡œ ë°”ê¿”ì•¼í•´..................................
-
-        
-/////////////////////////ê·¸ë¦¼íŒ UI ë°°ì¹˜///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+/////////////////////////±×¸²ÆÇ UI ¹èÄ¡///////////////////////////////////////////////////////////////////////////////////////////
         
         
         
-        //ê·¸ë¦¼íŒì—ì„œ ì´ë²¤íŠ¸!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //±×¸²ÆÇ¿¡¼­ ÀÌº¥Æ®!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         canvas1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 canvas1MouseDragged(evt);
@@ -289,12 +257,19 @@ public class Ex1_Chat extends javax.swing.JFrame {
     
     
     
-    //ì ‘ì† ë²„íŠ¼ ì´ë²¤íŠ¸ ë°œìƒ!!!!!!
+    //Á¢¼Ó ¹öÆ° ÀÌº¥Æ® ¹ß»ı!!!!!!
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        StringBuffer sb = new StringBuffer();
+    	nkname.setText(nickName.getText());
+    	
         try {
-        	//serIP: ì…ë ¥í•œ IPì£¼ì†Œê°’. portN: ì…ë ¥í•œ portê°’.
+        	//serIP: ÀÔ·ÂÇÑ IPÁÖ¼Ò°ª. portN: ÀÔ·ÂÇÑ port°ª.
             s = new Socket(serIP.getText().trim(), Integer.parseInt(portN.getText().trim()));
-            pw = new PrintWriter(new BufferedOutputStream(s.getOutputStream()), true); //ì„œë²„ì—ê²Œ ë³´ë‚¼ ê°ì²´ ìƒì„±.//ì–˜ëŠ” ë”°ë¡œ ê¸°ë‹¤ë¦´ í•„ìš”ê°€ ì—†ì§€.
+            pw = new PrintWriter(new BufferedOutputStream(s.getOutputStream()), true); //¼­¹ö¿¡°Ô º¸³¾ °´Ã¼ »ı¼º.//¾ê´Â µû·Î ±â´Ù¸± ÇÊ¿ä°¡ ¾øÁö.
+
+            String user = nickName.getText().trim();
+            sb.append("U:").append(user);
+            pw.println(sb.toString());
             
             new Thread(new Runnable() {
                 private BufferedReader br = null;
@@ -302,12 +277,12 @@ public class Ex1_Chat extends javax.swing.JFrame {
                 @Override
                 public void run() {
                     try {
-                        br = new BufferedReader(new InputStreamReader(s.getInputStream()));	//ì„œë²„ì—ì„œ ë°›ì„ ê°ì²´ ìƒì„±.//ë°ì´í„°ê°€ ìŒ“ì¼ë–„ê¹Œì§€ ëŒ€ê¸°.
+                        br = new BufferedReader(new InputStreamReader(s.getInputStream()));	//¼­¹ö¿¡¼­ ¹ŞÀ» °´Ã¼ »ı¼º.//µ¥ÀÌÅÍ°¡ ½×ÀÏ‹š±îÁö ´ë±â.
                         while (true) {
                             String msg = br.readLine();
                             StringTokenizer stn = new StringTokenizer(msg,"/");
                        
-                            msgView.append(msg + "\n");	//ë©”ì„¸ì§€ ì°½
+                            msgView.append(msg + "\n");	//¸Ş¼¼Áö Ã¢
                            
                         }
                     } catch (IOException ex) {
@@ -326,37 +301,39 @@ public class Ex1_Chat extends javax.swing.JFrame {
     
     
     
-    //ë©”ì„¸ì§€ ì…ë ¥ì°½ ì´ë²¤íŠ¸ ë°œìƒ!!!!!!!!!!!!!!!!!!!!!!!
+    //¸Ş¼¼Áö ÀÔ·ÂÃ¢ ÀÌº¥Æ® ¹ß»ı!!!!!!!!!!!!!!!!!!!!!!!
     private void messageActionPerformed(java.awt.event.ActionEvent evt) {
         StringBuffer sb = new StringBuffer();
         String msg = message.getText().trim();
         
         
         //talk/all/nickName/say
-        sb.append("talk/all/").append(nickName.getText().trim());	//ì•„... ì—¬ê¸°ì„œ ë©”ì„¸ì§€ë¥¼ ì…ë ¥í•˜ë©´ ì•ì— talk/all/ì„ ë¶™ì´êµ¬ë‚˜.
+        sb.append("talk/all/").append(nickName.getText().trim());	//¾Æ... ¿©±â¼­ ¸Ş¼¼Áö¸¦ ÀÔ·ÂÇÏ¸é ¾Õ¿¡ talk/all/À» ºÙÀÌ±¸³ª.
         sb.append("/").append(msg);
-        System.out.println("ê²€ì¦ :" + sb);
+        System.out.println("°ËÁõ :" + sb);
         
-        //ì„œë²„ë¡œ ë°ì´í„°ë¥¼ ì „ì†¡
+        //¼­¹ö·Î µ¥ÀÌÅÍ¸¦ Àü¼Û
         pw.println(sb.toString());	
+        
+        message.setText("");
 
     }
 
     
-    //ê·¸ë¦¼íŒì—ì„œ ì´ë²¤íŠ¸!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //±×¸²ÆÇ¿¡¼­ ÀÌº¥Æ®!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private void canvas1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_canvas1MouseDragged
 
         x = evt.getX();
         y = evt.getY();
-        pw.println("draw/"+color+"/"+x+"/"+y);	//ì—¬ê¸°ì„œ ê·¸ë ¸ì„ ë–„ draq/color/ í…ìŠ¤íŠ¸ë‘ x,y ì¢Œí‘œê°’ì„ ë³´ë‚´ëŠ” êµ¬ë‚˜.
+        pw.println("draw/"+color+"/"+x+"/"+y);	//¿©±â¼­ ±×·ÈÀ» ‹š draq/color/ ÅØ½ºÆ®¶û x,y ÁÂÇ¥°ªÀ» º¸³»´Â ±¸³ª.
         
-        //ìŠ¤ë ˆë“œê°€ canvas1.repaint(); 
+        //½º·¹µå°¡ canvas1.repaint(); 
     }//GEN-LAST:event_canvas1MouseDragged
 
     
     
     
-    //ì—¬ê¸¸ ë‚´ê°€ ì±„ì›Œì•¼ í•˜ëŠ”ê±°ì•¼...? ë¹¨ê°•,íŒŒë‘,ì´ˆë¡ ë²„íŠ¼ ëˆŒë €ì„ë•Œì˜ ì´ë²¤íŠ¸ë¥¼...??....??....?? ì´ GUIë¥¼...? êµ³ì´..???????/
+    //¿©±æ ³»°¡ Ã¤¿ö¾ß ÇÏ´Â°Å¾ß...? »¡°­,ÆÄ¶û,ÃÊ·Ï ¹öÆ° ´­·¶À»¶§ÀÇ ÀÌº¥Æ®¸¦...??....??....?? ÀÌ GUI¸¦...? ±»ÀÌ..???????/
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -371,8 +348,8 @@ public class Ex1_Chat extends javax.swing.JFrame {
 
     
     public static void main(String args[]) {
-//////////////////////ì‘ UIë¼ì´ë¸ŒëŸ¬ë¦¬ë„¤ ì‘ ì•ˆë…• ì‘ ì˜ê°€ ì‘ ë‹¤ì‹  ë³´ì§€ë§ì////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        try {	//ì‘ UIë¼ì´ë¸ŒëŸ¬ë¦¬ë„¤ ì‘ ì•ˆë…• ì‘ ì˜ê°€ ì‘ ë‹¤ì‹  ë³´ì§€ë§ì
+//////////////////////ÀÀ UI¶óÀÌºê·¯¸®³× ÀÀ ¾È³ç ÀÀ Àß°¡ ÀÀ ´Ù½Å º¸Áö¸»ÀÚ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        try {	//ÀÀ UI¶óÀÌºê·¯¸®³× ÀÀ ¾È³ç ÀÀ Àß°¡ ÀÀ ´Ù½Å º¸Áö¸»ÀÚ
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -391,10 +368,10 @@ public class Ex1_Chat extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        //ì‘ ë„ˆë„ UIë„¤ display ê·¸ë˜ ê·¸ë ‡êµ¬ë‚˜ ë‹¤ì‹  ë³´ì§€ ë§ì
+        //ÀÀ ³Êµµ UI³× display ±×·¡ ±×·¸±¸³ª ´Ù½Å º¸Áö ¸»ÀÚ
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ex1_Chat().setVisible(true);	//ì•„ ì—¬ê¸°ì„œ í´ë¼ì–¸íŠ¸ ìƒì„±ì ì‹¤í–‰í•˜ëŠ”êµ¬ë‚˜
+                new Ex1_Chat().setVisible(true);	//¾Æ ¿©±â¼­ Å¬¶ó¾ğÆ® »ı¼ºÀÚ ½ÇÇàÇÏ´Â±¸³ª
             }
         });
     }
@@ -420,10 +397,3 @@ public class Ex1_Chat extends javax.swing.JFrame {
     private javax.swing.JTextField serIP;
     // End of variables declaration//GEN-END:variables
 }
-
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
